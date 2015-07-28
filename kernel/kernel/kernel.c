@@ -12,8 +12,8 @@ void kernel_early()
 
 void foo(const char* str)
 {
-	char buffer[16];
-	memcpy(buffer, str, sizeof(buffer));
+    char buffer[16];
+    memcpy(buffer, str, sizeof(buffer));
     printf("Still alive!\n");
 }
 
