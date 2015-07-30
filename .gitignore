@@ -1,0 +1,7 @@
+*.iso
+*.img
+*.bin
+isodir
+sysroot
+a.out
+test.c
