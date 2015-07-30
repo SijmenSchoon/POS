@@ -16,6 +16,6 @@ void kernel_early()
 void kernel_main()
 {
     printf("%cello %s%c\n", toupper('h'), "world", '!');
-    printf("%x\n", 0xdeadbeef);
-
+    printf("%d\n", 1337);
+    printf("Test\n");
 }

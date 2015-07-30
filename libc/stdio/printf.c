@@ -3,20 +3,28 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include <math.h>
 
 static size_t print(const char *data, size_t l)
 {
-    const unsigned char *d = (const unsigned char *)data;
+#ifdef __is_pos_kernel
+    extern void terminal_write(const char *, size_t);
+    terminal_write(data, l);
+    return l;
+#else
     for (size_t i = 0; i < l; i++)
     {
-        putchar((int)d[i]);
+        putchar((int)data[i]);
     }
     return l;
+#endif
 }
 
 static char *itoa(int i, char *b, const char *digits)
 {
+    int base = strlen(digits);
     char *p = b;
+
     if (i == INT_MIN)
     {
 #define S(x) #x
@@ -31,40 +39,37 @@ static char *itoa(int i, char *b, const char *digits)
         i = -i;
     }
 
-    int shifter = i;
+    int tmp = i;
     do
     {
         p++;
-        shifter /= strlen(digits);
-    } while (shifter != 0);
+    } while (tmp /= base);
 
     *p = '\0';
     do
     {
-        *--p = digits[i%strlen(digits)];
-        i /= strlen(digits);
-    } while (i);
+        *--p = digits[i%base];
+    } while (i /= base);
 
     return b;
 }
 
 static char *utoa(unsigned int i, char *b, const char *digits)
 {
+    int base = strlen(digits);
     char *p = b;
 
-    int shifter = i;
+    int tmp = i;
     do
     {
         p++;
-        shifter /= strlen(digits);
-    } while (shifter != 0);
+    } while (tmp /= base);
 
     *p = '\0';
     do
     {
-        *--p = digits[i%strlen(digits)];
-        i /= strlen(digits);
-    } while (i);
+        *--p = digits[i%base];
+    } while (i /= base);
 
     return b;
 }

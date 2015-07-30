@@ -7,8 +7,7 @@
 int putchar(int i)
 {
 #if defined(__is_pos_kernel)
-    char c = (char)i;
-    terminal_write(&c, sizeof(c));
+    terminal_put_char(i);
 #else
     // TODO Implement write syscall
 #endif
