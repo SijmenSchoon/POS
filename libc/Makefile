@@ -42,12 +42,42 @@ ctype/isupper.o \
 ctype/isxdigit.o \
 ctype/tolower.o \
 ctype/toupper.o \
+\
 errno/errno.o \
+\
 math/acos.o \
+math/acosh.o \
+math/asin.o \
+math/asinh.o \
+math/atan.o \
+math/atanh.o \
+math/cbrt.o \
+math/cos.o \
+math/cosh.o \
+math/exp2.o \
+math/exp.o \
+math/expm1.o \
+math/fabs.o \
+math/frexp.o \
+math/ilogb.o \
+math/ldexp.o \
+math/log1p.o \
+math/log10.o \
+math/log.o \
+math/logb.o \
+math/modf.o \
+math/scalbn.o \
+math/sin.o \
+math/sinh.o \
+math/tan.o \
+math/tanh.o \
+\
 stdio/printf.o \
 stdio/putchar.o \
 stdio/puts.o \
+\
 stdlib/abort.o \
+\
 string/memcmp.o \
 string/memcpy.o \
 string/memmove.o \
@@ -79,13 +109,13 @@ libk.a: $(LIBK_OBJS)
 	$(AR) rcs $@ $(LIBK_OBJS)
 
 %.o: %.c
-	$(CC) -c $< -o $@ -std=gnu11 $(CFLAGS) $(CPPFLAGS)
+	$(CC) -c $< -o $@ -std=c11 $(CFLAGS) $(CPPFLAGS)
 
 %.o: %.S
 	$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
 
 %.libk.o: %.c
-	$(CC) -c $< -o $@ -std=gnu11 $(LIBK_CFLAGS) $(LIBK_CPPFLAGS)
+	$(CC) -c $< -o $@ -std=c11 $(LIBK_CFLAGS) $(LIBK_CPPFLAGS)
 
 %.libk.o: %.S
 	$(CC) -c $< -o $@ $(LIBK_CFLAGS) $(LIBK_CPPFLAGS)

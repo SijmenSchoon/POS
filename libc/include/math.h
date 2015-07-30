@@ -1,6 +1,229 @@
 #ifndef LIBC_MATH_H
 #define LIBC_MATH_H
 
+double acos(double x);
+float acosf(float x);
+long double acosl(long double x);
+
+double asin(double x);
+float asinf(float x);
+long double asinl(long double x);
+
+double atan(double x);
+float atanf(float x);
+long double atanl(long double x);
+
+double atan2(double y, double x);
+float atan2f(float y, float x);
+long double atan2l(long double y, long double x);
+
+double cos(double x);
+float cosf(float x);
+long double cosl(long double x);
+
+double sin(double x);
+float sinf(float x);
+long double sinl(long double x);
+
+double tan(double x);
+float tanf(float x);
+long double tanl(long double x);
+
+double acosh(double x);
+float acoshf(float x);
+long double acoshl(long double x);
+
+double asinh(double x);
+float asinhf(float x);
+long double asinhl(long double x);
+
+double atanh(double x);
+float atanhf(float x);
+long double atanhl(long double x);
+
+double cosh(double x);
+float coshf(float x);
+long double coshl(long double x);
+
+double sinh(double x);
+float sinhf(float x);
+long double sinhl(long double x);
+
+double tanh(double x);
+float tanhf(float x);
+long double tanhl(long double x);
+
+double exp(double x);
+float expf(float x);
+long double expl(long double x);
+
+double exp2(double x);
+float exp2f(float x);
+long double exp2l(long double x);
+
+double expm1(double x);
+float expm1f(float x);
+long double expm1l(long double x);
+
+double frexp(double value, int *exp);
+float frexpf(float value, int *exp);
+long double frexpl(long double value, int *exp);
+
+int ilogb(double x);
+int ilogbf(float x);
+int ilogbl(long double x);
+
+double ldexp(double x, int exp);
+float ldexpf(float x, int exp);
+long double ldexpl(long double x, int exp);
+
+double log(double x);
+float logf(float x);
+long double logl(long double x);
+
+double log10(double x);
+float log10f(float x);
+long double log10l(long double x);
+
+double log1p(double x);
+float log1pf(float x);
+long double log1pl(long double x);
+
+double log2(double x);
+float log2f(float x);
+long double log2l(long double x);
+
+double logb(double x);
+float logbf(float x);
+long double logbl(long double x);
+
+double modf(double value, double *iptr);
+float modff(float value, float *iptr);
+long double modfl(long double value, long double *iptr);
+
+double scalbn(double x, int n);
+float scalbnf(float x, int n);
+long double scalbnl(long double x, int n);
+
+double scalbln(double x, long int n);
+float scalblnf(float x, long int n);
+long double scalblnl(long double x, long int n);
+
+double cbrt(double x);
+float cbrtf(float x);
+long double cbrtl(long double x);
+
+double fabs(double x);
+float fabsf(float x);
+long double fabsl(long double x);
+
+double hypot(double x, double y);
+float hypotf(float x, float y);
+long double hypotl(long double x, long double y);
+
+double pow(double x, double y);
+float powf(float x, float y);
+long double powl(long double x, long double y);
+
+double sqrt(double x);
+float sqrtf(float x);
+long double sqrtl(long double x);
+
+double erf(double x);
+float erff(float x);
+long double erfl(long double x);
+
+double erfc(double x);
+float erfcf(float x);
+long double erfcl(long double x);
+
+double lgamma(double x);
+float lgammaf(float x);
+long double lgammal(long double x);
+
+double tgamma(double x);
+float tgammaf(float x);
+long double tgammal(long double x);
+
+double ceil(double x);
+float ceilf(float x);
+long double ceill(long double x);
+
+double floor(double x);
+float floorf(float x);
+long double floorl(long double x);
+
+double nearbyint(double x);
+float nearbyintf(float x);
+long double nearbyintl(long double x);
+
+double rint(double x);
+float rintf(float x);
+long double rintl(long double x);
+long int lrint(double x);
+long int lrintf(float x);
+long int lrintl(long double x);
+long long int llrint(double x);
+long long int llrintf(float x);
+long long int llrintl(long double x);
+
+double round(double x);
+float roundf(float x);
+long double roundl(long double x);
+long int lround(double x);
+long int lroundf(float x);
+long int lroundl(long double x);
+long long int llround(double x);
+long long int llroundf(float x);
+long long int llroundl(long double x);
+
+double trunc(double x);
+float truncf(float x);
+long double truncl(long double x);
+
+double fmod(double x, double y);
+float fmodf(float x, float y);
+long double fmodl(long double x, long double y);
+
+double remainder(double x, double y);
+float remainderf(float x, float y);
+long double remainderl(long double x, long double y);
+
+double remquo(double x, double y, int *quo);
+float remquof(float x, float y, int *quo);
+long double remquol(long double x, long double y, int *quo);
+
+double copysign(double x, double y);
+float copysignf(float x, float y);
+long double copysignl(long double x, long double y);
+
+double nan(const char *tagp);
+float nanf(const char *tagp);
+long double nanl(const char *tagp);
+
+double nextafter(double x, double y);
+float nextafterf(float x, float y);
+long double nextafterl(long double x, long double y);
+
+double nexttoward(double x, long double y);
+float nexttowardf(float x, long double y);
+long double nexttowardl(long double x, long double y);
+
+double fdim(double x, double y);
+float fdimf(float x, float y);
+long double fdiml(long double x, long double y);
+
+double fmax(double x, double y);
+float fmaxf(float x, float y);
+long double fmaxl(long double x, long double y);
+
+double fmin(double x, double y);
+float fminf(float x, float y);
+long double fminl(long double x, long double y);
+
+double fma(double x, double y, double z);
+float fmaf(float x, float y, float z);
+long double fmal(long double x, long double y, long double z);
 
 
 #if FLT_EVAL_METHOD == 0
@@ -51,119 +274,5 @@ typedef long double double_t;
 #define isnan    __builtin_isnan
 #define isnormal __builtin_isnormal
 #define signbit  __builtin_signbit
-
-// Trigonometric functions
-#define acos  __builtin_acos
-#define acosf __builtin_acosf
-#define acosl __builtin_acosl
-
-#define asin  __builtin_asin
-#define asinf __builtin_asinf
-#define asinl __builtin_asinl
-
-#define atan  __builtin_atan
-#define atanf __builtin_atanf
-#define atanl __builtin_atonl
-
-#define cos  __builtin_cos
-#define cosf __builtin_cosf
-#define cosl __builtin_cosl
-
-#define sin  __builtin_sin
-#define sinf __builtin_sinf
-#define sinl __builtin_sinl
-
-#define tan  __builtin_tan
-#define tanf __builtin_tanf
-#define tanl __builtin_tanl
-
-// Hyperbolic functions
-#define acosh  __builtin_acosh
-#define acoshf __builtin_acoshf
-#define acoshl __builtin_acoshl
-
-#define asinh  __builtin_asinh
-#define asinhf __builtin_asinhf
-#define asinhl __builtin_asinhl
-
-#define atanh  __builtin_atanh
-#define atanhf __builtin_atanhf
-#define atanhl __builtin_atanhl
-
-#define cosh  __builtin_cosh
-#define coshf __builtin_coshf
-#define coshl __builtin_coshl
-
-#define sinh  __builtin_sinh
-#define sinhf __builtin_sinhf
-#define sinhl __builtin_sinhl
-
-#define tanh  __builtin_tanh
-#define tanhf __builtin_tanhf
-#define tanhl __builtin_tanhl
-
-// Exponential and logarithmic functions
-#define exp  __builtin_exp
-#define expf __builtin_expf
-#define expl __builtin_expl
-
-#define exp2  __builtin_exp2
-#define exp2f __builtin_exp2f
-#define exp2l __builtin_exp2l
-
-#define expm1  __builtin_expm1
-#define expm1f __builtin_expm1f
-#define expm1l __builtin_expm1l
-
-#define frexp  __builtin_frexp
-#define frexpf __builtin_frexpf
-#define frexpl __builtin_frexpl
-
-#define ilogb  __builtin_ilogb
-#define ilogbf __builtin_ilogbf
-#define ilogbl __builtin_ilogbl
-
-#define ldexp  __builtin_ldexp
-#define ldexpf __builtin_ldexpf
-#define ldexpl __builtin_ldexpl
-
-#define log  __builtin_log
-#define logf __builtin_logf
-#define logl __builtin_logl
-
-#define log10  __builtin_log10
-#define log10f __builtin_log10f
-#define log10l __builtin_log10l
-
-#define log1p  __builtin_log1p
-#define log1pf __builtin_log1pf
-#define log1pl __builtin_log1pl
-
-#define logb  __builtin_logb
-#define logbf __builtin_logbf
-#define logbl __builtin_logbl
-
-#define modf  __builtin_modf
-#define modff __builtin_modff
-#define modfl __builtin_modfl
-
-#define scalbn  __builtin_scalbn
-#define scalbnf __builtin_scalbnf
-#define scalbnl __builtin_scalbnl
-#define scalbln  __builtin_scalbln
-#define scalblnf __builtin_scalblnf
-#define scalblnl __builtin_scalblnl
-
-// Power and absolute-value functions
-#define cbrt  __builtin_cbrt
-#define cbrtf __builtin_cbrtf
-#define cbrtl __builtin_cbrtl
-
-#define fabs  __builtin_fabs
-#define fabsf __builtin_fabsf
-#define fabsl __builtin_fabsl
-
-
-
 
 #endif
