@@ -224,50 +224,62 @@ long long int llround(double x);
 long long int llroundf(float x);
 long long int llroundl(long double x);
 
+// trunc.c
 double trunc(double x);
 float truncf(float x);
 long double truncl(long double x);
 
+// fmod.c
 double fmod(double x, double y);
 float fmodf(float x, float y);
 long double fmodl(long double x, long double y);
 
+// remainder.c
 double remainder(double x, double y);
 float remainderf(float x, float y);
 long double remainderl(long double x, long double y);
 
+// remquo.c
 double remquo(double x, double y, int *quo);
 float remquof(float x, float y, int *quo);
 long double remquol(long double x, long double y, int *quo);
 
+// copysign.c
 double copysign(double x, double y);
 float copysignf(float x, float y);
 long double copysignl(long double x, long double y);
 
+// nan.c
 double nan(const char *tagp);
 float nanf(const char *tagp);
 long double nanl(const char *tagp);
 
+// nextafter.c
 double nextafter(double x, double y);
 float nextafterf(float x, float y);
 long double nextafterl(long double x, long double y);
 
+// nexttoward.c
 double nexttoward(double x, long double y);
 float nexttowardf(float x, long double y);
 long double nexttowardl(long double x, long double y);
 
+// fdim.c
 double fdim(double x, double y);
 float fdimf(float x, float y);
 long double fdiml(long double x, long double y);
 
+// fmax.c
 double fmax(double x, double y);
 float fmaxf(float x, float y);
 long double fmaxl(long double x, long double y);
 
+// fmin.c
 double fmin(double x, double y);
 float fminf(float x, float y);
 long double fminl(long double x, long double y);
 
+// fma.c
 double fma(double x, double y, double z);
 float fmaf(float x, float y, float z);
 long double fmal(long double x, long double y, long double z);

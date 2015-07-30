@@ -54,6 +54,7 @@ math/atan.o \
 math/atanh.o \
 math/cbrt.o \
 math/ceil.o \
+math/copysign.o \
 math/cos.o \
 math/cosh.o \
 math/erf.o \
@@ -62,7 +63,12 @@ math/exp2.o \
 math/exp.o \
 math/expm1.o \
 math/fabs.o \
+math/fdim.o \
 math/floor.o \
+math/fma.o \
+math/fmax.o \
+math/fmin.o \
+math/fmod.o \
 math/frexp.o \
 math/hypot.o \
 math/ilogb.o \
@@ -78,8 +84,13 @@ math/logb.o \
 math/lrint.o \
 math/lround.o \
 math/modf.o \
+math/nan.o \
 math/nearbyint.o \
+math/nextafter.o \
+math/nexttoward.o \
 math/pow.o \
+math/remainder.o \
+math/remquo.o \
 math/rint.o \
 math/round.o \
 math/scalbn.o \
@@ -89,6 +100,7 @@ math/sqrt.o \
 math/tan.o \
 math/tanh.o \
 math/tgamma.o \
+math/trunc.o \
 \
 stdio/printf.o \
 stdio/putchar.o \
