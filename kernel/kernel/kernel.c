@@ -3,7 +3,9 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
-
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
 #include <kernel/tty.h>
 
 void kernel_early()
@@ -13,5 +15,7 @@ void kernel_early()
 
 void kernel_main()
 {
-    printf("Hello %s%c\n", "world", '!');
+    printf("%cello %s%c\n", toupper('h'), "world", '!');
+    printf("%d\n", fpclassify(NAN));
+
 }

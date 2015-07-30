@@ -40,6 +40,10 @@ ctype/ispunct.o \
 ctype/isspace.o \
 ctype/isupper.o \
 ctype/isxdigit.o \
+ctype/tolower.o \
+ctype/toupper.o \
+errno/errno.o \
+math/acos.o \
 stdio/printf.o \
 stdio/putchar.o \
 stdio/puts.o \
