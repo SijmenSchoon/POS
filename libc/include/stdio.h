@@ -33,7 +33,6 @@ typedef size_t fpos_t;
 #define SEEK_CUR 1
 #define SEEK_END 2
 
-
 #ifdef __cplusplus
 }
 #endif

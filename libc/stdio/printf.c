@@ -48,6 +48,28 @@ static char *itoa(int i, char *b, const char *digits)
     return b;
 }
 
+static char *utoa(unsigned int i, char *b, const char *digits)
+{
+    char *p = b;
+
+    int shifter = i;
+    do
+    {
+        p++;
+        shifter /= strlen(digits);
+    } while (shifter != 0);
+
+    *p = '\0';
+    do
+    {
+        *--p = digits[i%strlen(digits)];
+        i /= strlen(digits);
+    } while (i);
+
+    return b;
+}
+
+
 int printf(const char *restrict format, ...)
 {
     va_list parameters;
@@ -102,7 +124,7 @@ int printf(const char *restrict format, ...)
             case 'x':
                 format++;
                 char x[128];
-                itoa(va_arg(parameters, int), x, "0123456789abcdef");
+                utoa(va_arg(parameters, int), x, "0123456789abcdef");
                 written += print(x, strlen(x));
                 break;
 
