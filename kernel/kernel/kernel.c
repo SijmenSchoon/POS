@@ -15,7 +15,8 @@ void kernel_early()
 
 void kernel_main()
 {
+    volatile int variable = 0;
     printf("%cello %s%c\n", toupper('h'), "world", '!');
-    printf("%d\n", 1337);
+    printf("addr: %x\n", (unsigned int)&variable);
     printf("Test\n");
 }
