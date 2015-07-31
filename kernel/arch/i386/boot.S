@@ -19,18 +19,25 @@ stack_bottom:
 .skip 16384 // 16 KiB
 stack_top:
 
-.section .data
-.align 0x1000
+.section .pagedir
 boot_page_dir:
-.long 0x00000083			// Entry 0
-.fill 767, 4, 0x00000002
-.long 0x00000083			// Entry 767
-.fill 255, 4, 0x00000002
 
 // The kernel entry point.
 .section .text
 .global start
 start:
+	// Create a boot page dir
+	// Fill with 0x00000002s
+	mov $1024, %ecx
+	mov (boot_page_dir - 0xc0000000), %edx
+.loop:
+	movl $0x00000002, (%edx)
+	add $4, %edx
+	loop .loop
+	// Define two pages
+	movl $0x00000083, (boot_page_dir - 0xc0000000)
+	movl $0x00000083, (boot_page_dir - 0xc0000000) + 768*4
+
 	mov $(boot_page_dir - 0xc0000000), %ecx
 	mov %ecx, %cr3
 
@@ -47,7 +54,7 @@ start:
 
 higher_half:
 	// Get rid of the first page, we don't need it anymore
-	movl $0x00000000, boot_page_dir+0
+	movl $0x00000002, boot_page_dir+0
 	invlpg 0
 
 	// Initialize the stack
