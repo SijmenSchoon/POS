@@ -54,7 +54,7 @@ start:
 
 higher_half:
 	// Get rid of the first page, we don't need it anymore
-	movl $0x00000002, boot_page_dir+0
+	movl $0x00000002, boot_page_dir
 	invlpg 0
 
 	// Initialize the stack
