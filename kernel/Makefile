@@ -47,11 +47,11 @@ $(OBJS) \
 $(CRTEND_OBJ) \
 $(CRTN_OBJ) \
 
-all: pos.kernel
+all: kernel.elf
 
 .PHONY: all clean install install-headers install-kernel
 
-pos.kernel: $(OBJ_LINK_LIST) $(ARCHDIR)/linker.ld
+kernel.elf: $(OBJ_LINK_LIST) $(ARCHDIR)/linker.ld
 	$(CC) -T $(ARCHDIR)/linker.ld -o $@ $(CFLAGS) $(OBJ_LINK_LIST) $(LDFLAGS) $(LIBS)
 
 %.o: %.c
@@ -61,7 +61,7 @@ pos.kernel: $(OBJ_LINK_LIST) $(ARCHDIR)/linker.ld
 	$(CC) -c $< -o $@ $(CFLAGS) $(CPPFLAGS)
 
 clean:
-	rm -f pos.kernel $(OBJS) $(ALL_OUR_OBJS) *.o */*.o */*/*.o
+	rm -f kernel.elf $(OBJS) $(ALL_OUR_OBJS) *.o */*.o */*/*.o
 
 install: install-headers install-kernel
 
@@ -69,6 +69,6 @@ install-headers:
 	mkdir -p $(DESTDIR)$(INCLUDEDIR)
 	cp -RTv include $(DESTDIR)$(INCLUDEDIR)
 
-install-kernel: pos.kernel
+install-kernel: kernel.elf
 	mkdir -p $(DESTDIR)$(BOOTDIR)
-	cp pos.kernel $(DESTDIR)$(BOOTDIR)
+	cp kernel.elf $(DESTDIR)$(BOOTDIR)
