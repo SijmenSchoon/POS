@@ -1,6 +1,8 @@
 *.iso
 *.img
 *.bin
+*.elf
+*.log
 isodir
 sysroot
 a.out
