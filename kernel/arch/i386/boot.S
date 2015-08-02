@@ -28,15 +28,13 @@ boot_page_dir:
 start:
 	// Create a boot page dir
 	// Fill with 0x00000002s
+	mov $0x00000002, %eax
 	mov $1024, %ecx
-	mov (boot_page_dir - 0xc0000000), %edx
-.loop:
-	movl $0x00000002, (%edx)
-	add $4, %edx
-	loop .loop
+	mov $boot_page_dir - 0xc0000000, %edi
+	rep stosl
 	// Define two pages
-	movl $0x00000083, (boot_page_dir - 0xc0000000)
-	movl $0x00000083, (boot_page_dir - 0xc0000000) + 768*4
+	movl $0x00000083, boot_page_dir - 0xc0000000
+	movl $0x00000083, boot_page_dir - 0xc0000000 + 768*4
 
 	mov $(boot_page_dir - 0xc0000000), %ecx
 	mov %ecx, %cr3
