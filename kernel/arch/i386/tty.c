@@ -38,6 +38,23 @@ void terminal_put_entry_at(char c, uint8_t color, size_t x, size_t y)
     VGA_MEMORY[y*VGA_WIDTH + x] = vga_make_entry(c, color);
 }
 
+void terminal_set_pos(size_t x, size_t y)
+{
+    terminal_column = x;
+    terminal_row = y;
+}
+
+void terminal_fill(size_t x, size_t y, size_t w, size_t h, uint8_t color)
+{
+    for (size_t j = y; j < y + h; j++)
+    {
+        for (size_t i = x; i < x + w; i++)
+        {
+            terminal_buffer[j*VGA_WIDTH + x] = vga_make_entry(' ', color);
+        }
+    }
+}
+
 void terminal_put_char(char c)
 {
     switch (c)
