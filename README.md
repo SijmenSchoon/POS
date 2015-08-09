@@ -1,5 +1,5 @@
 # POS
-Well, this is POS. It stands for POS Operating System, which in itself stands
+Well, this is POS. It stands for POS Operating System, which in turn stands
 for Piece Of S*** Operating System. No recursive acronyms this time!
 
 Most of the current code is taken, or at least highly inspired by the tutorial
